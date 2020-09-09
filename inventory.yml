@@ -1,0 +1,11 @@
+---
+hosts:
+  node1.example.com:
+    ipv4: 192.168.122.11
+  node2.example.com:
+    ipv4: 192.168.122.12
+  node3.example.com:
+    ipv4: 192.168.122.13
+  node4.example.com:
+    ipv4: 192.168.122.14
+...
