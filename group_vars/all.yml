@@ -1,0 +1,12 @@
+---
+gateway: 192.168.122.1
+netmask: 255.255.255.0
+interface: ens192
+ns:
+  - 192.168.122.10
+  - 192.168.122.11
+webserver_url: http://server.example.com/kickstart/ks.cfg
+webserver_port: 8080
+my_iso: rhel-8.2-x86_64-boot.iso
+extra_opts: modprobe.blacklist=qla2xxx,lpfc inst.text biosdevname=0
+...
