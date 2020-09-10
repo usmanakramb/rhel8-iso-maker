@@ -1,7 +1,11 @@
 ---
 gateway: 192.168.122.1
 netmask: 255.255.255.0
-interface: ens192
+interface: bond0
+vlan: bond0.41
+bond_int1: ens2f1
+bond_int2: ens7f0
+bond_mode: 802.3ad
 ns:
   - 192.168.122.10
   - 192.168.122.11
