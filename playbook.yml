@@ -14,6 +14,7 @@
       packages:
       - rsync
       - genisoimage
+      - syslinux
 
   tasks:
   - block:
@@ -65,13 +66,11 @@
 
   - name: Add DNS
     set_fact:
-      cmd_args: "{{ cmd_args }} nameserver={{ ns[0] }}"
+      cmd_args: "{{ cmd_args }} nameserver={{ ns1 }}"
 
   - name: Add second DNS
     set_fact:
-      cmd_args: "{{ cmd_args }} nameserver={{ ns[1] }}"
-    when: "{{ ns[1] }} is defined"
-    ignore_errors: true
+      cmd_args: "{{ cmd_args }} nameserver={{ ns2 }}"
 
   - name: Build grub variables
     set_fact:
@@ -87,13 +86,11 @@
 
   - name: Add DNS
     set_fact:
-      cmd_args1: "{{ cmd_args1 }} nameserver={{ ns[0] }}"
+      cmd_args1: "{{ cmd_args1 }} nameserver={{ ns1 }}"
 
   - name: Add second DNS
     set_fact:
-      cmd_args1: "{{ cmd_args1 }} nameserver={{ ns[1] }}"
-    when: "{{ ns[1] }} is defined"
-    ignore_errors: true
+      cmd_args1: "{{ cmd_args1 }} nameserver={{ ns2 }}"
 
   - block:
     - name: Replace the isolinux.cfg file
